@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Deepfake Detection</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -20,7 +19,7 @@
     <script>
         document.getElementById("upload-form").addEventListener("submit", async function(event) {
             event.preventDefault();
-            
+
             let fileInput = document.getElementById("audio-file").files[0];
             if (!fileInput) {
                 alert("Please select an audio file!");
@@ -36,7 +35,7 @@
             });
 
             let result = await response.json();
-            document.getElementById("result").innerText = `Prediction: ${result.prediction}`;
+            document.getElementById("result").innerText = `Prediction: The Audio is  ${result.prediction}`;
         });
     </script>
 </body>
