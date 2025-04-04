@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Deepfake Detection</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Deepfake Detection</h1>
+        <form id="upload-form">
+            <input type="file" id="audio-file" accept=".wav" required>
+            <button type="submit">Upload & Detect</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById("upload-form").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            let fileInput = document.getElementById("audio-file").files[0];
+            if (!fileInput) {
+                alert("Please select an audio file!");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", fileInput);
+
+            let response = await fetch("http://127.0.0.1:5001/predict", {
+                method: "POST",
+                body: formData
+            });
+
+            let result = await response.json();
+            document.getElementById("result").innerText = `Prediction: ${result.prediction}`;
+        });
+    </script>
+</body>
+</html>
