@@ -15,7 +15,7 @@ Audio-Deepfake-Detection/ │── uploads/ # Folder for uploaded audio files �
 ## ⚙️ Setup & Installation
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/Audio-Deepfake-Detection.git
+   git clone https://github.com/dasmrpmunna/Audio-Deepfake-Detection.git
    cd Audio-Deepfake-Detection
 
 
