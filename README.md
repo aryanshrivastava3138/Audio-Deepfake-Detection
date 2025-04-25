@@ -13,7 +13,7 @@ This project aims to detect deepfake audio using machine learning. The model is 
 
 ![Home Page](images/1.png)
 
-> Prediction Page:
+> Click to select Audio File Page:
 
 ![Click to select Audio File.. Page](images/2.png)
 
