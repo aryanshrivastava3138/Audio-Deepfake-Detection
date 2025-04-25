@@ -7,6 +7,24 @@ This project aims to detect deepfake audio using machine learning. The model is 
 - The model predicts if the audio is **Real** or **Fake**.
 - Uses a Flask-based REST API for real-time inference.
 
+## 🖼️ Screenshots
+
+> Home Page:
+
+![Home Page](images/1.png)
+
+> Prediction Page:
+
+![Click to select Audio File.. Page](images/2.png)
+
+> Output Page:
+
+![Predict Real Page](images/3.png)
+
+![Predict Fack Page](images/4.png)
+
+
+
 ## 📂 Project Structure
 
 
@@ -15,7 +33,7 @@ Audio-Deepfake-Detection/ │── uploads/ # Folder for uploaded audio files �
 ## ⚙️ Setup & Installation
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/Audio-Deepfake-Detection.git
+   git clone https://github.com/dasmrpmunna/Audio-Deepfake-Detection.git
    cd Audio-Deepfake-Detection
 
 

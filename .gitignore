@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+
+# Flask
+instance/
+*.db
+*.sqlite3
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Model Files
+model.keras
+
+# Logs
+*.log
+
+# Temporary Files
+*.swp
+*.bak
+*.tmp
+
+# Dependencies (you already include requirements.txt, so you may ignore these)
+*.egg
+*.egg-info/
+dist/
+build/
+*.tar.gz
+
+# Operating System Specific
+.DS_Store      # macOS
+Thumbs.db      # Windows
+
+# IDE and Editor Configurations
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Uploaded Audio Files (if you don’t want to track the uploaded audio files in version control)
+uploads/
+
+# Python environment and configuration
+.env
