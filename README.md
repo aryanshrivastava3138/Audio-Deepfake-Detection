@@ -23,7 +23,7 @@ This project aims to detect deepfake audio using machine learning. The model is 
 
 ![Predict Fack Page](images/4.png)
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 📂 Project Structure
 
@@ -51,7 +51,7 @@ python app.py
 5. Access the Web App Open your browser and go to:
 http://127.0.0.1:5000
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 🛠 Technologies Used
 Python
 
@@ -63,7 +63,10 @@ Librosa (for audio processing)
 
 HTML/CSS/JavaScript (Frontend)
 
+
+
 Note:
+
 🔹 TensorFlow:
 TensorFlow is an open-source machine learning framework developed by Google.
 It is used to build, train, and deploy deep learning and machine learning models efficiently at scale.
@@ -88,7 +91,7 @@ It provides easy tools to extract features like MFCCs, spectrograms, chroma, and
 - Perform tempo, pitch, and beat analysis.
 - Useful in speech recognition, audio classification, and deepfake detection.
 
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🏗 Future Improvements
 Support for more audio formats (.mp3, .ogg, etc.).
@@ -104,13 +107,14 @@ Feel free to fork this repository and contribute to the project!
 This project is open-source and available under the MIT License.
 
 
----
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### 📌 **Final Step**  
 Save the file, and now your `README.md` is ready! You can view it in **VS Code**, **GitHub**, or **Markdown viewers**.
 
 Want me to improve it further or customize it for your needs? 🚀🔥
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## 📜 License
 This project is licensed under the [MIT License](LICENSE).
