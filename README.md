@@ -63,6 +63,29 @@ Librosa (for audio processing)
 
 HTML/CSS/JavaScript (Frontend)
 
+Note:
+🔹 TensorFlow:
+TensorFlow is an open-source machine learning framework developed by Google.
+It is used to build, train, and deploy deep learning and machine learning models efficiently at scale.
+It supports automatic differentiation, GPU/TPU acceleration, and works across platforms (desktop, mobile, cloud).
+
+🔹 Keras:
+Keras is a high-level deep learning API that runs on top of TensorFlow.
+It simplifies model building by offering easy-to-use functions for creating and training neural networks.
+Keras is beginner-friendly, modular, and supports rapid prototyping with less code.
+
+🔊 Librosa (for Audio Processing):
+Librosa is a Python library used for analyzing and processing audio signals, especially in music and speech applications.
+It provides easy tools to extract features like MFCCs, spectrograms, chroma, and more from .wav files or other audio formats.
+
+✅ Key Features Librosa:
+- Load and save audio files easily.
+- Convert audio to spectrograms, MFCCs, and other formats.
+- Perform tempo, pitch, and beat analysis.
+- Useful in speech recognition, audio classification, and deepfake detection.
+
+
+
 🏗 Future Improvements
 Support for more audio formats (.mp3, .ogg, etc.).
 
