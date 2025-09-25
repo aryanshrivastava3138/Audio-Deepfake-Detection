@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Audio Deepfake Detection{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+        <p>Get in touch with our team for questions, support, or collaboration</p>
+    </div>
+</div>
+
+<div class="content-section">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>We're here to help you understand and utilize our audio deepfake detection technology. Whether you have questions about our system, need technical support, or want to explore partnership opportunities, we'd love to hear from you.</p>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>info@deepguard.com</p>
+                            <p>support@deepguard.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p>Mon-Fri, 9AM-6PM EST</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>123 AI Research Blvd</p>
+                            <p>Tech Valley, CA 94000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <form class="contact-form" id="contact-form">
+                    <h2>Send us a Message</h2>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What audio formats are supported?</h3>
+                    <p>Currently, our system supports .wav audio files. We're working on adding support for additional formats like .mp3 and .ogg in future updates.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How accurate is the detection?</h3>
+                    <p>Our system achieves over 95% accuracy in detecting deepfake audio. However, accuracy may vary depending on the quality and type of audio being analyzed.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Is my audio data stored?</h3>
+                    <p>No, we do not store any uploaded audio files. All processing is done in memory, and files are automatically deleted after analysis.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I integrate this into my application?</h3>
+                    <p>Yes! We offer API access for developers who want to integrate our detection technology into their own applications. Contact us for more details.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What's the maximum file size?</h3>
+                    <p>Currently, we support audio files up to 10MB in size. For larger files, please contact us to discuss enterprise solutions.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How long does analysis take?</h3>
+                    <p>Most audio files are analyzed within 2-5 seconds, depending on the file size and current server load.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Simulate form submission
+    const submitBtn = document.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+        alert('Thank you for your message! We\'ll get back to you soon.');
+        this.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
+});
+</script>
+{% endblock %}

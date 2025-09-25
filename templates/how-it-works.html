@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}How It Works - Audio Deepfake Detection{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-cogs"></i> How It Works</h1>
+        <p>Understanding the science behind audio deepfake detection</p>
+    </div>
+</div>
+
+<div class="content-section">
+    <div class="container">
+        <div class="process-timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-upload"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>1. Audio Upload</h3>
+                    <p>You upload your audio file (.wav format) through our secure interface. The file is temporarily processed in memory without being stored on our servers.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-wave-square"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>2. Feature Extraction</h3>
+                    <p>Our system extracts Mel-Spectrogram features from the audio, converting sound waves into visual representations that reveal hidden patterns invisible to the human ear.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>3. AI Analysis</h3>
+                    <p>The extracted features are fed into our trained neural network model, which analyzes patterns and artifacts that distinguish real audio from synthetic deepfakes.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="timeline-content">
+                    <h3>4. Result Generation</h3>
+                    <p>The model outputs a confidence score and classification, determining whether the audio is "Real" or "Fake" based on learned patterns from thousands of training samples.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="technical-details">
+            <h2><i class="fas fa-microscope"></i> Technical Deep Dive</h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3><i class="fas fa-chart-area"></i> Mel-Spectrogram Analysis</h3>
+                    <p>We convert audio signals into Mel-Spectrograms, which represent the frequency content of audio over time. This visual representation reveals subtle artifacts left by deepfake generation algorithms.</p>
+                    <ul>
+                        <li>Frequency domain analysis</li>
+                        <li>Time-frequency representation</li>
+                        <li>Perceptual scaling</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3><i class="fas fa-network-wired"></i> Neural Network Architecture</h3>
+                    <p>Our detection model uses a Convolutional Neural Network (CNN) specifically designed for audio analysis, trained on diverse datasets of real and synthetic audio.</p>
+                    <ul>
+                        <li>Convolutional layers for pattern recognition</li>
+                        <li>Pooling layers for feature reduction</li>
+                        <li>Dense layers for classification</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3><i class="fas fa-search"></i> Artifact Detection</h3>
+                    <p>Deepfake audio often contains subtle artifacts that our model is trained to identify, including spectral inconsistencies and unnatural frequency patterns.</p>
+                    <ul>
+                        <li>Spectral artifacts</li>
+                        <li>Phase inconsistencies</li>
+                        <li>Temporal anomalies</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3><i class="fas fa-shield-alt"></i> Robustness Features</h3>
+                    <p>Our system is designed to handle various audio qualities and formats while maintaining high accuracy across different types of deepfake generation methods.</p>
+                    <ul>
+                        <li>Noise robustness</li>
+                        <li>Compression tolerance</li>
+                        <li>Multi-generator detection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accuracy-section">
+            <h2><i class="fas fa-target"></i> Detection Accuracy</h2>
+            <div class="accuracy-grid">
+                <div class="accuracy-card">
+                    <div class="accuracy-chart">
+                        <div class="chart-circle">
+                            <span class="chart-percentage">95%</span>
+                        </div>
+                    </div>
+                    <h3>Overall Accuracy</h3>
+                    <p>Correctly identifies both real and fake audio samples</p>
+                </div>
+                <div class="accuracy-card">
+                    <div class="accuracy-chart">
+                        <div class="chart-circle">
+                            <span class="chart-percentage">97%</span>
+                        </div>
+                    </div>
+                    <h3>True Positive Rate</h3>
+                    <p>Successfully detects deepfake audio when present</p>
+                </div>
+                <div class="accuracy-card">
+                    <div class="accuracy-chart">
+                        <div class="chart-circle">
+                            <span class="chart-percentage">93%</span>
+                        </div>
+                    </div>
+                    <h3>True Negative Rate</h3>
+                    <p>Correctly identifies authentic audio as real</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

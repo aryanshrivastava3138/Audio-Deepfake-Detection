@@ -1,42 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Deepfake Detection</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Audio Deepfake Detection</h1>
-        <form id="upload-form">
-            <input type="file" id="audio-file" accept=".wav" required>
-            <button type="submit">Upload & Detect</button>
-        </form>
-        <p id="result"></p>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Audio Deepfake Detection</h1>
+        <p class="hero-subtitle">Protect yourself from AI-generated fake audio with our advanced detection system</p>
+        
+        <div class="upload-container">
+            <div class="upload-card">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h2>Upload Audio File</h2>
+                <p>Select a .wav audio file to analyze for deepfake detection</p>
+                
+                <form id="upload-form" class="upload-form">
+                    <div class="file-input-wrapper">
+                        <input type="file" id="audio-file" accept=".wav" required>
+                        <label for="audio-file" class="file-input-label">
+                            <i class="fas fa-file-audio"></i>
+                            <span>Choose Audio File</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="analyze-btn">
+                        <i class="fas fa-search"></i>
+                        Analyze Audio
+                    </button>
+                </form>
+                
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Analyzing audio...</p>
+                </div>
+                
+                <div id="result" class="result"></div>
+            </div>
+        </div>
     </div>
+</div>
 
-    <script>
-        document.getElementById("upload-form").addEventListener("submit", async function(event) {
-            event.preventDefault();
+<div class="features-section">
+    <div class="container">
+        <h2 class="section-title">Why Choose DeepGuard?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI-Powered Detection</h3>
+                <p>Advanced machine learning algorithms trained on extensive datasets to identify deepfake audio</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Real-time Analysis</h3>
+                <p>Get instant results with our optimized processing pipeline for quick audio verification</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>High Accuracy</h3>
+                <p>State-of-the-art model with high precision in distinguishing real from synthetic audio</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Secure & Private</h3>
+                <p>Your audio files are processed securely and not stored on our servers</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-            let fileInput = document.getElementById("audio-file").files[0];
-            if (!fileInput) {
-                alert("Please select an audio file!");
-                return;
-            }
+<script>
+document.getElementById("upload-form").addEventListener("submit", async function(event) {
+    event.preventDefault();
 
-            let formData = new FormData();
-            formData.append("file", fileInput);
+    const fileInput = document.getElementById("audio-file");
+    const loading = document.getElementById("loading");
+    const result = document.getElementById("result");
+    const analyzeBtn = document.querySelector(".analyze-btn");
 
-            let response = await fetch("http://127.0.0.1:5001/predict", {
-                method: "POST",
-                body: formData
-            });
+    if (!fileInput.files[0]) {
+        showResult("Please select an audio file!", "error");
+        return;
+    }
 
-            let result = await response.json();
-            document.getElementById("result").innerText = `Prediction: The Audio is  ${result.prediction}`;
+    // Show loading state
+    loading.classList.remove("hidden");
+    result.innerHTML = "";
+    analyzeBtn.disabled = true;
+    analyzeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+
+    try {
+        const formData = new FormData();
+        formData.append("file", fileInput.files[0]);
+
+        const response = await fetch("http://127.0.0.1:5001/predict", {
+            method: "POST",
+            body: formData
         });
-    </script>
-</body>
-</html>
+
+        const data = await response.json();
+        
+        if (response.ok) {
+            const prediction = data.prediction;
+            const isReal = prediction === "Real";
+            showResult(
+                `Analysis Complete: The audio is ${prediction}`,
+                isReal ? "success" : "warning",
+                isReal ? "fas fa-check-circle" : "fas fa-exclamation-triangle"
+            );
+        } else {
+            showResult(`Error: ${data.error}`, "error", "fas fa-times-circle");
+        }
+    } catch (error) {
+        showResult("Network error. Please try again.", "error", "fas fa-times-circle");
+    } finally {
+        // Hide loading state
+        loading.classList.add("hidden");
+        analyzeBtn.disabled = false;
+        analyzeBtn.innerHTML = '<i class="fas fa-search"></i> Analyze Audio';
+    }
+});
+
+function showResult(message, type, icon = "") {
+    const result = document.getElementById("result");
+    result.innerHTML = `
+        <div class="result-${type}">
+            ${icon ? `<i class="${icon}"></i>` : ""}
+            <span>${message}</span>
+        </div>
+    `;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// File input label update
+document.getElementById("audio-file").addEventListener("change", function(e) {
+    const label = document.querySelector(".file-input-label span");
+    if (e.target.files[0]) {
+        label.textContent = e.target.files[0].name;
+    } else {
+        label.textContent = "Choose Audio File";
+    }
+});
+</script>
+{% endblock %}
