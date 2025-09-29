@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Technology - Audio Deepfake Detection{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="container">
+        <h1><i class="fas fa-microchip"></i> Technology Stack</h1>
+        <p>Powered by cutting-edge AI and machine learning technologies</p>
+    </div>
+</div>
+
+<div class="content-section">
+    <div class="container">
+        <div class="tech-overview">
+            <h2>Core Technologies</h2>
+            <div class="tech-stack-grid">
+                <div class="tech-stack-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Primary programming language for machine learning and backend development</p>
+                    <div class="tech-features">
+                        <span class="tech-tag">Data Processing</span>
+                        <span class="tech-tag">ML Libraries</span>
+                        <span class="tech-tag">API Development</span>
+                    </div>
+                </div>
+
+                <div class="tech-stack-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>TensorFlow/Keras</h3>
+                    <p>Deep learning framework for building and training neural networks</p>
+                    <div class="tech-features">
+                        <span class="tech-tag">Neural Networks</span>
+                        <span class="tech-tag">Model Training</span>
+                        <span class="tech-tag">GPU Acceleration</span>
+                    </div>
+                </div>
+
+                <div class="tech-stack-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Librosa</h3>
+                    <p>Audio analysis library for feature extraction and signal processing</p>
+                    <div class="tech-features">
+                        <span class="tech-tag">Spectrograms</span>
+                        <span class="tech-tag">Feature Extraction</span>
+                        <span class="tech-tag">Audio Processing</span>
+                    </div>
+                </div>
+
+                <div class="tech-stack-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Flask</h3>
+                    <p>Lightweight web framework for creating REST API endpoints</p>
+                    <div class="tech-features">
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">File Upload</span>
+                        <span class="tech-tag">Real-time Processing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="model-architecture">
+            <h2><i class="fas fa-sitemap"></i> Model Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <div class="layer-box input-layer">
+                        <h4>Input Layer</h4>
+                        <p>Mel-Spectrogram<br>(128 x 128 x 1)</p>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-box conv-layer">
+                        <h4>Convolutional Layers</h4>
+                        <p>Feature extraction with<br>multiple conv blocks</p>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-box pool-layer">
+                        <h4>Pooling Layers</h4>
+                        <p>Dimensionality reduction<br>and feature selection</p>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-box dense-layer">
+                        <h4>Dense Layers</h4>
+                        <p>Classification and<br>decision making</p>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-box output-layer">
+                        <h4>Output Layer</h4>
+                        <p>Binary Classification<br>(Real/Fake)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="training-process">
+            <h2><i class="fas fa-dumbbell"></i> Training Process</h2>
+            <div class="training-grid">
+                <div class="training-card">
+                    <h3><i class="fas fa-database"></i> Dataset Preparation</h3>
+                    <ul>
+                        <li>Diverse collection of real and synthetic audio samples</li>
+                        <li>Multiple deepfake generation techniques represented</li>
+                        <li>Balanced dataset with equal real/fake samples</li>
+                        <li>Data augmentation for improved robustness</li>
+                    </ul>
+                </div>
+
+                <div class="training-card">
+                    <h3><i class="fas fa-cog"></i> Feature Engineering</h3>
+                    <ul>
+                        <li>Mel-Spectrogram extraction with optimal parameters</li>
+                        <li>Normalization and standardization techniques</li>
+                        <li>Padding and truncation for consistent input size</li>
+                        <li>Noise reduction and preprocessing</li>
+                    </ul>
+                </div>
+
+                <div class="training-card">
+                    <h3><i class="fas fa-chart-line"></i> Model Optimization</h3>
+                    <ul>
+                        <li>Hyperparameter tuning for optimal performance</li>
+                        <li>Cross-validation for robust evaluation</li>
+                        <li>Regularization techniques to prevent overfitting</li>
+                        <li>Early stopping and learning rate scheduling</li>
+                    </ul>
+                </div>
+
+                <div class="training-card">
+                    <h3><i class="fas fa-check-circle"></i> Validation & Testing</h3>
+                    <ul>
+                        <li>Separate test set for unbiased evaluation</li>
+                        <li>Performance metrics: accuracy, precision, recall</li>
+                        <li>Confusion matrix analysis</li>
+                        <li>Real-world testing scenarios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="performance-metrics">
+            <h2><i class="fas fa-tachometer-alt"></i> Performance Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="metric-value">95.2%</div>
+                    <div class="metric-label">Accuracy</div>
+                    <div class="metric-description">Overall correct predictions</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <div class="metric-value">96.8%</div>
+                    <div class="metric-label">Precision</div>
+                    <div class="metric-description">True positives / (True positives + False positives)</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="metric-value">94.1%</div>
+                    <div class="metric-label">Recall</div>
+                    <div class="metric-description">True positives / (True positives + False negatives)</div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="metric-value">95.4%</div>
+                    <div class="metric-label">F1-Score</div>
+                    <div class="metric-description">Harmonic mean of precision and recall</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

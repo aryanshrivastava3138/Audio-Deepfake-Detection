@@ -22,6 +22,22 @@ except Exception as e:
 def home():
     return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/how-it-works')
+def how_it_works():
+    return render_template('how-it-works.html')
+
+@app.route('/technology')
+def technology():
+    return render_template('technology.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 @app.route('/static/<path:filename>')
 def static_files(filename):
     return send_from_directory(app.static_folder, filename)
