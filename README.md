@@ -59,22 +59,18 @@ pip install -r requirements.txt
 python app.py
 
 5. Access the Web App Open your browser and go to:
-http://127.0.0.1:5000
+http://127.0.0.1:5001
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 🛠 Technologies Used
 
 Python
-
 Flask
-
 TensorFlow/Keras
-
 Librosa (for audio processing)
-
 HTML/CSS/JavaScript (Frontend)
 
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Note:
 
