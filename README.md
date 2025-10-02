@@ -65,9 +65,13 @@ http://127.0.0.1:5001
 🛠 Technologies Used
 
 Python
+
 Flask
+
 TensorFlow/Keras
+
 Librosa (for audio processing)
+
 HTML/CSS/JavaScript (Frontend)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
